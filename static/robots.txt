@@ -1,0 +1,7 @@
+User-agent: *
+
+# Allow crawling of all other pages
+Allow: /
+
+# Specify the location of your sitemap
+Sitemap: https://saasbillinghub.com/sitemap-0.xml
