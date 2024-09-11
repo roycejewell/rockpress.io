@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FormModal from './form';
+import { trackEvent } from 'fathom-client';
 
 const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
   const [selectedOption, setSelectedOption] = useState(0);
@@ -21,18 +22,13 @@ const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
+  console.log(trackEvent);
 
   const handleSubmit = (email) => {
     console.log(`Submitted email: ${email} for ${modalContent.header}`);
     
     // Submit a Fathom Analytics event
-    if (fathom && typeof fathom.trackGoal === 'function') {
-      window.fathom.trackGoal('Membership Form', {
-        _value: email + ' ' + modalContent.header + ' ' + new Date().toISOString()
-      });
-    } else {
-      console.warn('Fathom Analytics not available or not properly initialized');
-    }
+    trackEvent(email + ' ' + modalContent.header + ' ' + new Date().toISOString());
 
     setSuccessMessage('Good things to come. We will be in touch shortly.');
     // Optionally close the modal after a delay
