@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PageIntro from "../components/page-intro"
 
 
 
@@ -20,7 +19,7 @@ const NotFoundPage = ({pageContext}) => {
       datePublished={pageContext.site.published}
       dateModified={pageContext.site.modified}
     />
-    <PageIntro img={'/meta.png'} title={pageContext.title} text={pageContext.intro} />
+
 
     </Layout>
 	)

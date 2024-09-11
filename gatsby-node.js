@@ -20,7 +20,9 @@ exports.createPages = async ({ actions }) => {
 
   const demographics = siteMetadata.site.demographics.sort();
 
-  const features = Array.from(new Set(products.flatMap(product => product.features))).sort();
+  // const features = Array.from(new Set(products.flatMap(product => product.features))).sort();
+
+  const features = siteMetadata.site.features;
 
 
   // Helper function for product of arrays
@@ -29,7 +31,7 @@ exports.createPages = async ({ actions }) => {
   }
 
   function createPageForTemplate(template, context, section) {
-      pageCount++; // Increment the page count here
+    pageCount++; // Increment the page count here
     const slug = slugify(context.title, { lower: true });
     const url = `/${slug}`;
     createPage({
@@ -57,141 +59,68 @@ exports.createPages = async ({ actions }) => {
   // Template-specific page creation functions
   function createStandardListPages() {
     product([niche], formats).forEach(([niche, format]) => {
-      createPageForTemplate('list',
+      createPageForTemplate('landing',
       {
         site,
-        products,
         title: `${niche} ${format}`,
-        intro: `Check out a variety of ${niche} ${format}, helping you make smart choices with our detailed reviews.`
+        intro: `Expert ${niche} ${format} services tailored for your business needs.`
       }, 'Niche Format');
     });
   }
 
   function createStandardAdjectivePages() {
     product(adjectives, [niche], formats).forEach(([adjective, niche, format]) => {
-      createPageForTemplate('list', 
+      createPageForTemplate('landing', 
         {
           site,
-          products,
           title: `${adjective} ${niche} ${format}`,
-          intro: `Listing the ${adjective} ${niche} ${format}, focusing on what matters most for your billing needs.`
+          intro: `Delivering ${adjective} ${niche} ${format} solutions to elevate your website.`
         }, 'Adjective Niche Format');
     });
   }
 
   function createStandardFeaturePages() {
     product(adjectives, [niche], formats, features).forEach(([adjective, niche, format, feature]) => {
-      createPageForTemplate('list', 
+      createPageForTemplate('landing', 
         {
           site,
-          products: products.filter(product => product.features.includes(feature)),
           title: `${adjective} ${niche} ${format} for ${feature}`,
-          intro: `Get the scoop on ${adjective} ${niche} ${format} for ${feature}, with our in-depth analysis.`
+          intro: `Specialized ${adjective} ${niche} ${format} services focusing on ${feature} to boost your website performance.`
         }, 'Adjective Niche Format for Feature');
     });
   }
 
   function createStandardDemographicPages() {
     product(adjectives, [niche], formats, demographics).forEach(([adjective, niche, format, demographic]) => {
-      createPageForTemplate('list',
+      createPageForTemplate('landing',
         {
           site,
-          products,
           title: `${adjective} ${niche} ${format} for ${demographic}`,
-          intro: `Guidance on ${adjective} ${niche} ${format} for ${demographic}, compiled for clarity and relevance.`
+          intro: `Tailored ${adjective} ${niche} ${format} solutions designed specifically for ${demographic} businesses.`
         }, 'Adjective Niche Format for Demographic');
     });
   }
 
-  function createAlternativesListPages() {
-    product(products).forEach(([product]) => {
-      createPageForTemplate('single',
+  function createServicePages() {
+    features.forEach((feature) => {
+      createPageForTemplate('landing',
         {
           site,
-          products: products.filter(p => p.name === product.name),
-          title: `${product.name}`,
-          intro: `Take a look at ${product.name}, showcasing various features, pricing options, and comparisons to help you decide.`
-        }, 'Product Single');
-    });
-
-    product(products).forEach(([product]) => {
-      createPageForTemplate('list',
-        {
-          site,
-          products: products.filter(p => p.name !== product.name),
-          title: `${product.name} alternatives`,
-          intro: `Explore alternatives to ${product.name}, offering plenty of choices for your billing needs.`
-        }, 'Product Alternatives');
-    });
-
-    product(adjectives, products).forEach(([adjective, product]) => {
-      createPageForTemplate('list',
-        {
-          site,
-          products: products.filter(p => p.name !== product.name),
-          title: `${adjective} ${product.name} alternatives`,
-          intro: `Check out top alternatives to ${product.name}, selected for a thorough comparison.`
-        }, 'Adjective Product Alternatives');
+          title: `${feature} Services for ${niche}`,
+          intro: `Professional ${feature} services optimized for ${niche} websites.`
+        }, 'Feature Services');
     });
   }
 
-  function createAlternativesFeaturePages() {
-    product(products, features).forEach(([product, feature]) => {
-      createPageForTemplate('list',
+  function createLocationPages() {
+    const locations = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix']; // Add more locations as needed
+    product([niche], formats, locations).forEach(([niche, format, location]) => {
+      createPageForTemplate('landing',
         {
           site,
-          products: products.filter(p => p.name !== product.name).filter(product => product.features.includes(feature)),
-          title: `${product.name} alternatives for ${feature}`,
-          intro: `Find alternatives to ${product.name} for ${feature}, laid out for easy comparison.`
-        }, 'Product Alternatives for Feature');
-    });
-
-    product(adjectives, products, features).forEach(([adjective, product, feature]) => {
-      createPageForTemplate('list',
-        {
-          site,
-          products: products.filter(p => p.name !== product.name).filter(product => product.features.includes(feature)),
-          title: `${adjective} ${product.name} alternatives for ${feature}`,
-          intro: `Discover the ${adjective} alternatives to ${product.name} for ${feature}, detailed for quick comparison.`
-        }, 'Adjective Product Alternatives for Feature');
-    });
-  }
-
-  function createAlternativesDemographicPages() {
-    product(products, demographics).forEach(([product, demographic]) => {
-      createPageForTemplate('list',
-        {
-          site,
-          products: products.filter(p => p.name !== product.name),
-          title: `${product.name} alternatives for ${demographic}`,
-          intro: `Alternatives to ${product.name} for ${demographic}, providing targeted options.`
-        }, 'Product Alternatives for Demographic');
-    });
-
-    product(adjectives, products, demographics).forEach(([adjective, product, demographic]) => {
-      createPageForTemplate('list',
-        {
-          site,
-          products: products.filter(p => p.name !== product.name),
-          title: `${adjective} ${product.name} alternatives for ${demographic}`,
-          intro: `Alternatives to ${product.name} for ${demographic}, providing targeted options.`
-        }, 'Adjective Product Alternatives for Demographic');
-    });
-  }
-
-  function createComparisonPages() {
-    products.forEach((productA, index) => {
-      for (let j = index + 1; j < products.length; j++) {
-        const productB = products[j];
-        createPageForTemplate('comparison',
-          {
-            site,
-            productA: productA,
-            productB: productB,
-            title: `${productA.name} vs ${productB.name}`,
-            intro: `Comparing ${productA.name} vs ${productB.name}, highlighting key differences and features.`
-          }, 'Comparison');
-      }
+          title: `${niche} ${format} in ${location}`,
+          intro: `Top-tier ${niche} ${format} services for businesses in ${location}.`
+        }, 'Location-based Services');
     });
   }
 
@@ -200,22 +129,17 @@ exports.createPages = async ({ actions }) => {
     createStandardListPages();
     createStandardAdjectivePages();
     createStandardFeaturePages();
-    // createStandardDemographicPages();
-
-    createAlternativesListPages();
-    createAlternativesFeaturePages();
-    // createAlternativesDemographicPages();
-
-    createComparisonPages();
+    createStandardDemographicPages();
+    createServicePages();
+    createLocationPages();
 
     createPage({
       path: `/`,
-      component: path.resolve(`src/templates/home.js`),
+      component: path.resolve(`src/templates/landing.js`),
       context: {
         site,
-        title: site.title,
-        intro: site.intro,
-        products,
+        title: 'World Class Wordpress Development. One Simple Subscription.',
+        intro: 'The Solution to Expensive Agencies, Unreliable Freelancers, and Tedious Hiring.',
         slug: '',
         urls,
         niche,
@@ -226,15 +150,14 @@ exports.createPages = async ({ actions }) => {
       }
     });
 
-      // Create the 404 page
+    // Create the 404 page
     createPage({
       path: '/404',
       component: path.resolve('src/templates/404.js'),
       context: {
         site,
-        title: 'Nothing exists here...',
-        intro: 'Cmon bud, check the footer for some real pages.',
-        products,
+        title: 'Page Not Found',
+        intro: 'The page youre looking for doesnt exist. Please check our menu for available services.',
         slug: '/404',
         urls,
         niche,
@@ -244,14 +167,10 @@ exports.createPages = async ({ actions }) => {
         demographics,
       }
     });
-
-
   }
 
   createPageConfigs();
-
 };
-
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -269,6 +188,5 @@ exports.onCreatePage = ({ page, actions }) => {
 
 exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`);
-    reporter.info(`A total of ${pageCount} pages were created.`);
-
+  reporter.info(`A total of ${pageCount} pages were created.`);
 };

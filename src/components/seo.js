@@ -25,7 +25,7 @@ const Seo = ({ description, title, metaImage, favicon, domain, slug }) => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:site" content={slug} />
       <meta property="twitter:description" content={description} />
-      <script src="https://cdn.usefathom.com/script.js" data-site="LFEQGZNZ" defer></script>
+      <script src="https://cdn.usefathom.com/script.js" data-site="HSLDYFUV" defer></script>
     </Helmet>
   );
 };

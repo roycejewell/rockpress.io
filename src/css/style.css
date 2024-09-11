@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 * {
-	font-family: 'Outfit' !important;
+	font-family: 'Space Grotesk' !important;
 	@apply m-0 p-0;
+  scroll-behavior: smooth;
 }
 
 .icon {
@@ -13,68 +14,53 @@
 }
 
 .button {
-	@apply bg-green-500 text-white hover:bg-green-700 transition-all hover:text-white;
+	@apply bg-lime-400 h-[50px] w-[200px] rounded-lg !leading-[50px] text-center text-black transition-all hover:text-lime-400 hover:bg-stone-800;
 }
 
 .link {
-	@apply text-green-500 underline !font-medium hover:text-green-700 transition-all;
+	@apply bg-lime-400 underline !font-medium hover:text-green-700 transition-all;
 }
 
-a {
-	@apply hover:text-green-700;
-}
-
-.feature-border {
-
-}
-
-.feature-text-list {
-
-}
-
-.feature-text-table {
-
-}
 
 /* Tailwind CSS */
 h1, .h1 {
-  @apply text-[32px] md:text-[40px]; /* 32px for mobile, 40px for md */
+  @apply text-[37.45px] md:text-[49.83px]; /* 37.45px for mobile, 49.83px for md */
 }
 
 h2, .h2 {
-  @apply text-[28px] md:text-[36px]; /* 28px for mobile, 36px for md */
+  @apply text-[28.16px] md:text-[37.45px]; /* 28.16px for mobile, 37.45px for md */
 }
 
 h3, .h3 {
-  @apply text-[22px] md:text-[28px]; /* 22px for mobile, 28px for md */
+  @apply text-[21.17px] md:text-[28.16px]; /* 21.17px for mobile, 28.16px for md */
 }
 
 h4, .h4 {
-  @apply text-[20px] md:text-[26px]; /* 20px for mobile, 26px for md */
+  @apply text-[15.92px] md:text-[21.17px]; /* 15.92px for mobile, 21.17px for md */
 }
 
 h5, .h5 {
-  @apply text-[20px] md:text-[24px]; /* 18px for mobile, 24px for md */
+  @apply text-[11.97px] md:text-[15.92px]; /* 11.97px for mobile, 15.92px for md */
 }
 
 .p-lg {
-  @apply text-[16px] md:text-[20px]; /* 16px for mobile, 18px for md */
+  @apply text-[18px] md:text-[21.28px]; /* 18px for mobile, 21.28px for md */
 }
 
 p, a, span, ul, li, ol, .p {
-  @apply text-[16px] md:text-[18px]; /* 16px for mobile, 18px for md */
+  @apply text-[16px] md:text-[16px]; /* 16px for both mobile and md */
 }
 
 .p-sm {
-  @apply text-[14px] md:text-[16px]; /* 14px for mobile, 16px for md */
+  @apply text-[14px] md:text-[14px]; /* 14px for both mobile and md */
 }
 
 .p-nav {
-  @apply text-[14px] md:text-[16px]; /* 14px for mobile, 16px for md */
+  @apply text-[14px] md:text-[14px]; /* 14px for both mobile and md */
 }
 
 .p-xs {
-  @apply text-[12px] md:text-[14px]; /* 12px for mobile, 14px for md */
+  @apply text-[12px] md:text-[12px]; /* 12px for both mobile and md */
 }
 
 
@@ -109,26 +95,3 @@ b, strong {
 	@apply font-bold;
 }
 
-table {
-	@apply w-full overflow-x-scroll p border-slate-200 border;
-}
-
-caption {
-	@apply text-left;
-}
-
-tr, td, th {
-	@apply p-[15px] text-left border-slate-200 border;
-}
-
-th {
-	@apply font-bold bg-slate-100 text-black;
-}
-
-tr {
-	@apply font-normal bg-white;
-}
-
-thead tr {
-
-}
