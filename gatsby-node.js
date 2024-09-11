@@ -29,6 +29,7 @@ exports.createPages = async ({ actions }) => {
   function product(...args) {
     return args.reduce((acc, val) => acc.flatMap(d => val.map(v => [...d, v])), [[]]);
   }
+  
 
   function createPageForTemplate(template, context, section) {
     pageCount++; // Increment the page count here
