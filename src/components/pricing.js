@@ -90,19 +90,19 @@ const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
             {/* CTAs */}
             <div className="flex flex-row items-center justify-start mt-auto">
               <button 
-                onClick={() => openModal({
-                  header: `Secure your ${currentOption.header} Membership.`,
-                  cta: currentOption.cta.text
-                })} 
+                data-tally-hide-title="1"
+                data-tally-open="n0vJ89"
+                data-tally-width="450"
+                data-tally-layout="modal" 
                 className="button h5 mr-[15px]"
               >
                 {currentOption.cta.text}
               </button>
               <button 
-                onClick={() => openModal({
-                  header: 'Talk to us about a Membership.',
-                  cta: 'Get in Touch'
-                })} 
+                data-tally-open="nWYM8e" 
+                data-tally-width="450"
+                data-tally-layout="modal" 
+                data-tally-hide-title="1"
                 className="h5 underline"
               >
                 {currentOption.secondaryCta.text}

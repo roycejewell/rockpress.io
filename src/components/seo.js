@@ -26,6 +26,7 @@ const Seo = ({ description, title, metaImage, favicon, domain, slug }) => {
       <meta property="twitter:site" content={slug} />
       <meta property="twitter:description" content={description} />
       <script src="https://cdn.usefathom.com/script.js" data-site="HSLDYFUV" defer></script>
+      <script async src="https://tally.so/widgets/embed.js"></script>
     </Helmet>
   );
 };
