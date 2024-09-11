@@ -10,7 +10,7 @@ const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
   const toggleOption = () => {
     setSelectedOption(selectedOption === 0 ? 1 : 0);
   };
-  console.log(window.fathom);
+
   const currentOption = pricingOptions[selectedOption];
 
   const openModal = (option) => {
@@ -26,7 +26,7 @@ const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
     console.log(`Submitted email: ${email} for ${modalContent.header}`);
     
     // Submit a Fathom Analytics event
-    if (window.fathom && typeof window.fathom.trackGoal === 'function') {
+    if (fathom && typeof fathom.trackGoal === 'function') {
       window.fathom.trackGoal('Membership Form', {
         _value: email + ' ' + modalContent.header + ' ' + new Date().toISOString()
       });
