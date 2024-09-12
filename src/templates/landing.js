@@ -156,24 +156,24 @@ const Landing = ({ pageContext }) => {
                 header="Let the People Speak."
                 testimonials={[
                     {
-                        name: "Tom Marquis",
+                        name: "Tom",
                         title: "Creative Director",
                         testimonial: "We've evolved from startup to industry leader, and Rockpress has been by our side through all of it. Their work has been integral to Uplight's marketing and brand success.",
                         image: "/tom.jpeg",
                         logo: "/uplight.svg"
                     },
                     {
-                        name: "John Porrini",
+                        name: "John",
                         title: "Head of Content",
                         testimonial: "Total game changer for our web & content team. Rockpress's efficiency in handling high-volume projects makes it a no-brainer compared to training an in-house team.",
                         image: "/john.png",
                         logo: "/describely.svg"
                     },
                     {
-                        name: "Matt Hurley",
+                        name: "Matt",
                         title: "General Manager",
                         testimonial: "Nothing compares to Rockpress in terms of speed, skill, and budget predictability. They have scaled with Rytr seamlessly.",
-                        image: "/hurley.png",
+                        image: "/headshot.png",
                         logo: "/rytr.svg"
                     },
                 ]}

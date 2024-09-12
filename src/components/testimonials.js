@@ -2,9 +2,9 @@ import React from 'react';
 
 const Testimonials = ({ header, testimonials }) => {
   return (
-    <section className="py-[50px] bg-black border-t border-b border-stone-800 overflow-hidden h-[500px]">
+    <section className="pb-[50px] bg-black border-t border-b border-stone-800 overflow-hidden h-[500px]">
       <div className="max-w-5xl mx-auto px-[25px] lg:px-[0px] flex flex-col md:flex-row">
-        <h2 className="h2 mb-[50px] md:mb-0 md:w-1/3 md:pr-[25px]">{header}</h2>
+        <h2 className="h2 mb-[50px] md:mb-0 md:w-1/3 md:pr-[25px] bg-black border-b border-stone-800 py-[50px] md:border-0 z-10">{header}</h2>
         <div className="md:w-2/3 relative">
           <div className="animate-scroll">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
