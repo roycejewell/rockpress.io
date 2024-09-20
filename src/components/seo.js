@@ -29,10 +29,12 @@ const Seo = ({ description, title, metaImage, favicon, domain, slug }) => {
       <script async src="https://tally.so/widgets/embed.js"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16709232055"></script>
       <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-16709232055');
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-16709232055');
+        `}
       </script>
     </Helmet>
   );
