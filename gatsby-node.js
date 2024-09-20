@@ -150,6 +150,23 @@ exports.createPages = async ({ actions }) => {
         demographics,
       }
     });
+    // Create the Thank You page
+    createPage({
+      path: '/thank-you',
+      component: path.resolve('src/templates/thank-you.js'),
+      context: {
+        site,
+        title: 'Thank You!',
+        intro: 'We will be in touch soon.',
+        slug: '/thank-you',
+        urls,
+        niche,
+        formats,
+        adjectives,
+        features,
+        demographics,
+      }
+    });
 
     // Create the 404 page
     createPage({
