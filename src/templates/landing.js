@@ -91,7 +91,7 @@ const Landing = ({ pageContext }) => {
                 header="Get Your Site Audited. On Us. No Charge."
                 copy="We'll audit your site and provide a report with actionable recommendations to improve your site's performance."
                 ctaText="Get My Free Audit"
-                ctaLink="#pricing"
+                ctaLink="#https://tally.so/r/3yvBRp"
                 image={ "/audit.png" }
                 alt="Audit"
             />
@@ -178,14 +178,7 @@ const Landing = ({ pageContext }) => {
                         testimonial: "Total game changer for our web & content team. Rockpress's efficiency in handling high-volume projects makes it a no-brainer compared to training an in-house team.",
                         image: "/john.png",
                         logo: "/describely.svg"
-                    },
-                    {
-                        name: "Matt",
-                        title: "General Manager",
-                        testimonial: "Nothing compares to Rockpress in terms of speed, skill, and budget predictability. They have scaled with Rytr seamlessly.",
-                        image: "/headshot.png",
-                        logo: "/rytr.svg"
-                    },
+                    }
                 ]}
             />
 
