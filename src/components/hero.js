@@ -42,12 +42,6 @@ const Hero = ({ title, copy, cta, clients }) => {
           >
             {cta.text}
           </a>
-          <a
-            href="#audit"
-            className="button ml-[15px] !text-lime-400 !bg-black h5 inline-block mx-auto"
-          >
-            Get Free Website Audit
-          </a>
         </div>
         {clients && clients.length > 0 && (
           <div className="mt-[100px] mb-[25px]">

@@ -8,7 +8,7 @@ import Outcome from "../components/outcome"
 import Testimonials from "../components/testimonials"
 import FAQs from "../components/faqs"
 import CTA from "../components/cta"
-import Audit from "../components/audit"
+import ComparisonTable from "../components/table"
 import Convenience from "../components/convenience"
 import Features from "../components/features"
 import Pricing from "../components/pricing"
@@ -87,14 +87,7 @@ const Landing = ({ pageContext }) => {
                 </div>
             </div>
 
-            <Audit
-                header="Get Your Site Audited. On Us. No Charge."
-                copy="We'll audit your site and provide a report with actionable recommendations to improve your site's performance."
-                ctaText="Get My Free Audit"
-                ctaLink="#https://tally.so/r/3yvBRp"
-                image={ "/audit.png" }
-                alt="Audit"
-            />
+            <ComparisonTable />
 
             <Features
                 header="Everything You Need to Grow."
