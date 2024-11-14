@@ -30,7 +30,7 @@ const Landing = ({ pageContext }) => {
                 dateModified={pageContext.site.modified}
             />
             <Hero
-                title={pageContext.title}
+                title={'On-Demand Wordpress Development for Marketing Teams.'}
                 copy={pageContext.intro}
                 cta={{ text: "Secure Your Spot", url: "#pricing" }}
                 clients={[
@@ -183,14 +183,15 @@ const Landing = ({ pageContext }) => {
               pricingOptions={[
                 {
                   header: "Standard",
-                  price: "$7,495",
-                  description: "One Website. Pause or cancel anytime.",
+                  price: "$9,995",
+                  description: "/month",
                   listItems: [
-                      "1 Website",
-                      "Unlimited Requests",
-                      "Avg 48 Hour Delivery",
+                    "1 Task at a Time",
+                    "Unlimited Requests",
+                    "Avg 48 Hour Delivery",
+                      "Unlimited Websites",
                       "24/7 Slack Support",
-                    "Calls as Needed"
+                      "Pause or Cancel Anytime"
                   ],
                   cta: { text: "Secure Your Spot", link: "#" },
                   secondaryCta: { text: "Book a Call", link: "#" },
@@ -198,14 +199,15 @@ const Landing = ({ pageContext }) => {
                 },
                 {
                   header: "Pro",
-                  price: "$9,995",
-                  description: "Multiple Websites. Pause or cancel anytime.",
+                  price: "$11,995",
+                  description: "/month",
                   listItems: [
-                      "Multiple Websites",
+                      "2 Tasks at a Time",
                       "Unlimited Requests",
                       "Avg 48 Hour Delivery",
+                      "Unlimited Websites",
                       "24/7 Slack Support",
-                      "Calls as Needed"
+                      "Pause or Cancel Anytime"
                   ],
                   cta: { text: "Secure Your Spot", link: "#" },
                   secondaryCta: { text: "Book a Call", link: "#" },

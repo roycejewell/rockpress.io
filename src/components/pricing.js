@@ -73,9 +73,10 @@ const Pricing = ({ title, ctaText, copy, ctaLink, pricingOptions }) => {
                 </span>
               </button>
             </div>
-
-            <p className="h2 text-left mb-[15px]">{currentOption.price}</p>
-            <p className="p-md text-stone-400 text-left mb-[25px]">{currentOption.description}</p>
+            <span className="flex items-end">
+              <span className="h2 text-left mb-[15px]">{currentOption.price}</span>
+              <span className="p-md text-stone-400 text-left mb-[25px] ml-[10px]">{currentOption.description}</span>
+            </span>
 
             {/* List Items */}
             <ul className="grid grid-cols-2 gap-[15px] mb-[25px]">
