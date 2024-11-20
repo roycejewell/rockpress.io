@@ -4,7 +4,7 @@ const Layout = ({ pageContext, children }) => {
   console.log(pageContext)
   return (
     <div className='bg-black text-white w-full overflow-x-hidden'>
-      <header className='h-[75px] border-stone-800 border rounded-2xl px-[10px] m-0 fixed top-[10px] left-[10px] right-[10px] lg:left-0 lg:right-0 bg-black z-40 max-w-5xl mx-auto'>
+      <header className='h-[75px] border-stone-800 border rounded-2xl px-[20px] m-0 fixed top-[10px] left-[10px] right-[10px] lg:left-0 lg:right-0 bg-black z-40 max-w-5xl mx-auto'>
         <div className='w-full mx-auto md:px-[15px] h-full flex flex-wrap items-center justify-between'>
             <a className='block'  href='/'>
               <img title={pageContext.site.org + ' Header Logo'}  alt={pageContext.site.org + ' Header Logo'} className='h-[20px] md:h-[20px]' src={pageContext.site.logo}/>

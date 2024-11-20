@@ -27,7 +27,7 @@ const Hero = ({ title, copy, cta, clients }) => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-black to-black  pt-[150px] pb-[100px] w-full">
+    <section className="bg-gradient-to-b from-black to-black  pt-[150px] pb-[25px] md:pb-[100px] w-full">
       <div className="max-w-5xl mx-auto px-[25px] lg:px-[0px]">
         <div className="text-left max-w-5xl mx-auto">
           <div className="inline-flex items-center mb-[25px] border border-stone-800 px-[15px] py-[5px] rounded-full">
